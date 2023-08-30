@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1.2P</title>
+    <style>
+        body {
+            background: seashell;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+        .header {
+            text-align: center;
+            font-size: 40px;
+            background-color: rgb(70, 150, 255);
+            padding:20px;
+            border-radius: 20px;
+            border: 3px solid black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .block {
+            vertical-align: top;
+            min-width: 250px;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+            flex: 1;
+            flex: 250px;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        .stringMethods {
+            background-color:rgb(200, 240, 255);
+            padding:20px;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+        .numberMethods {
+            background-color:rgb(255, 205, 140);
+            padding:20px;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+        .arrayMethods {
+            background-color:rgb(255, 150, 150);
+            padding:20px;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+        .dateMethods {
+            background-color:rgb(170, 160, 255);
+            padding:20px;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+        button {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            box-shadow: 4px 4px 5px black;
+        }
+        h2 {
+            color: white;
+            background-color: black;
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .userInput {
+            color: black;
+            background-color: white;
+            padding: 8px;
+            border-radius: 8px;
+            max-width: 90%;
+        }
+        .output {
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .array {
+            background-color: black;
+            background-color: white;
+            padding: 8px;
+            border: 2px solid black;
+            border-radius: 8px;
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="header">Task 1.2P - Responsive Web Design & JavaScript Methods</h1>
+    </div>
+    <div class="container">
+        <div class="stringMethods block">
+            <h1>String Methods</h1>
+            <h3>Method 1 - length</h3>
+            <p>Click the button below to output a count of the characters entered</p>
+            <input type="text" id="userInput_1" class="userInput">
+            <button onclick="length()">Count!</button>
+            <p>The number of characters is...</p>
+            <h2 id="count">0</h2>
+            <h3>Method 2 - replace()</h3>
+            <h2 id="string_1">I like apples</h2>
+            <p>Click the button below to replace a word in the text above</p>
+            <button onclick="replace_text()">Click here!</button>
+            <p>Click the button below to revert the word in the text above to its original value</p>
+            <button onclick="revert_text()">Click here!</button><br>
+            <h3>Method 3 - toLowerCase()</h3>
+            <h2 id="string_2">I WATCH TV</h2>
+            <p>Click the button below to convert the text above to lower case</p>
+            <button onclick="to_lowercase()">Click here!</button><br>
+            <h3>Method 4 - toUpperCase()</h3>
+            <p>Click the button below to convert the text above back to upper case</p>
+            <button onclick="to_uppercase()">Click here!</button><br>
+            <h3>Method 5 - slice()</h3>
+            <p>Click the button below to output the first 5 characters entered</p>
+            <input type="text" id="userInput_2" class="userInput">
+            <button onclick="slice()">Slice!</button>
+            <p>The sliced part of the string is...</p>
+            <h2 id="slice">0</h2>
+        </div>
+        <div class="numberMethods block">
+            <h1>Number Methods</h1>
+            <h3>Method 1 - toString()</h3>
+            <p>Click the button below to turn the number entered into a string</p>
+            <input type="number" id="userInput_3" class="userInput">
+            <button onclick="to_string()">Stringify!</button>
+            <p>The value as a string is...</p>
+            <h2 id="string_3">0</h2>
+            <h3>Method 2 - toExponential()</h3>
+            <p>Click the button below to convert the number entered to exponential notation</p>
+            <input type="number" id="userInput_4" class="userInput">
+            <button onclick="to_exponential()">Exponential-ify!</button>
+            <p>The value in exponential notation is...</p>
+            <h2 id="string_4">0</h2>
+            <h3>Method 3 - toFixed()</h3>
+            <p>Click the button below to display the number entered rounded to one decimal</p>
+            <input type="number" id="userInput_5" class="userInput">
+            <button onclick="to_fixed()">Fix-ify!</button>
+            <p>The value fixed to one decimal is...</p>
+            <h2 id="string_5">0</h2>
+            <h3>Method 4 - toPrecision()</h3>
+            <p>Click the button below to display the number entered rounded to five digits</p>
+            <input type="number" id="userInput_6" class="userInput">
+            <button onclick="to_precision()">Precise-ify!</button>
+            <p>The value displayed as five digits is...</p>
+            <h2 id="string_6">0</h2>
+            <h3>Method 5 - valueOf()</h3>
+            <p>Click the button below to display the number entered as a primitive value</p>
+            <input type="number" id="userInput_7" class="userInput">
+            <button onclick="value_of()">Value-ify!</button>
+            <p>The number as a primitive value is...</p>
+            <h2 id="string_7">0</h2>
+        </div>
+        <div class="arrayMethods block">
+            <h1>Array Methods</h1>
+            <p id="teams" class="array"></p>
+            <h3>Method 1 - length</h3>
+            <p>See the length of the array above displayed below...</p>
+            <h2 id="array_method_1"></h2>
+            <h3>Method 2 - toString()</h3>
+            <p>See the array above displayed as a string below...</p>
+            <h2 id="array_method_2"></h2>
+            <h3>Method 3 - pop()</h3>
+            <p>See that an element of the array has been removed below...</p>
+            <p id="array_popped" class="array"></p>
+            <p>See the "popped" last element of the array below...</p>
+            <h2 id="array_method_3"></h2>
+            <h3>Method 4 - push()</h3>
+            <p>See the "pushed" new element of the array below...</p>
+            <p id="array_pushed" class="array"></p>
+            <p>See the new length of the array below...</p>
+            <h2 id="array_method_4"></h2>
+            <h3>Method 5 - shift()</h3>
+            <p>See that an element of the array has been removed below...</p>
+            <p id="array_shifted" class="array"></p>
+            <p>See the first element that was "shifted" out below...</p>
+            <h2 id="array_method_5"></h2>
+            <h3>Method 6 - sort()</h3>
+            <p id="scores" class="array"></p>
+            <p>See the elements of the array above sorted in ascending order below...</p>
+            <h2 id="array_method_6"></h2>
+        </div>
+        <div class="dateMethods block">
+            <h1>Date Methods</h1>
+            <h3>Method 1 - new Date()</h3>
+            <p>See a newly created date object below...</p>
+            <p id="dateObject" class="array"></p>
+            <h3>Method 2 - getFullYear()</h3>
+            <p>See the year value of the date above printed below...</p>
+            <h2 id="date_method_2"></h2>
+            <h3>Method 3 - getMonth()</h3>
+            <p>See the month value of the date above printed below...</p>
+            <h2 id="date_method_3"></h2>
+            <h3>Method 4 - getDate()</h3>
+            <p>See the date value of the date above printed below...</p>
+            <h2 id="date_method_4"></h2>
+            <h3>Method 5 - setHours()</h3>
+            <p>See the newly set hours value of the date above printed below...</p>
+            <h2 id="date_method_5"></h2>
+        </div>
+    </div>
+    <script>
+        // string method 1
+        function length() {
+            let text = document.getElementById("userInput_1").value;
+            document.getElementById("count").innerHTML = text.length;
+        }
+        // string method 2
+        function replace_text() {
+            let text = document.getElementById('string_1').innerHTML;
+            document.getElementById('string_1').innerHTML = text.replace(/APPLES/i, 'oranges');
+        };
+        function revert_text() {
+            let text = document.getElementById('string_1').innerHTML;
+            document.getElementById('string_1').innerHTML = text.replace(/ORANGES/i, 'apples');
+        };
+        // string method 3
+        function to_lowercase() {
+            let text = document.getElementById("string_2").innerHTML;
+            document.getElementById("string_2").innerHTML =
+            text.toLowerCase();
+        };
+        // string method 4
+        function to_uppercase() {
+            let text = document.getElementById("string_2").innerHTML;
+            document.getElementById("string_2").innerHTML =
+            text.toUpperCase();
+        };
+        // string method 5
+        function slice() {
+            let text = document.getElementById("userInput_2").value;
+            document.getElementById("slice").innerHTML = text.slice(0,5);
+        }
+        // number method 1
+        function to_string() {
+            let number = document.getElementById("userInput_3").value;
+            document.getElementById("string_3").innerHTML = number.toString();
+        }
+        // number method 2
+        function to_exponential() {
+            let number = document.getElementById("userInput_4").value;
+            let inputValue = parseFloat(number);
+            document.getElementById("string_4").innerHTML = inputValue.toExponential();
+        }
+        // number method 3
+        function to_fixed() {
+            let number = document.getElementById("userInput_5").value;
+            let inputValue = parseFloat(number);
+            document.getElementById("string_5").innerHTML = inputValue.toFixed(1);
+        }
+        // number method 4
+        function to_precision() {
+            let number = document.getElementById("userInput_6").value;
+            let inputValue = parseFloat(number);
+            document.getElementById("string_6").innerHTML = inputValue.toPrecision(5);
+        }
+        // number method 5
+        function value_of() {
+            let number = document.getElementById("userInput_7").value;
+            document.getElementById("string_7").innerHTML = number.valueOf();
+        }
+        // array method 1
+        const teams = ['Collingwood', 'Brisbane', 'Port Adelaide', 'Melbourne'];
+        document.getElementById('teams').innerHTML = teams;
+        let size = teams.length;
+        document.getElementById('array_method_1').innerHTML = size;
+        // array method 2
+        let string = teams.toString();
+        document.getElementById('array_method_2').innerHTML = string;
+        // array method 3
+        let teams_popped = teams.pop();
+        document.getElementById('array_popped').innerHTML = teams;
+        document.getElementById('array_method_3').innerHTML = teams_popped;
+        // array method 4
+        let teams_pushed = teams.push('Carlton');
+        document.getElementById('array_pushed').innerHTML = teams;
+        document.getElementById('array_method_4').innerHTML = teams_pushed;
+        // array method 5
+        let teams_shifted = teams.shift();
+        document.getElementById('array_shifted').innerHTML = teams;
+        document.getElementById('array_method_5').innerHTML = teams_shifted;
+        // array method 6
+        const scores = [101, 72, 94, 77, 72, 60, 105, 56]
+        document.getElementById('scores').innerHTML = scores;
+        let scores_sorted = scores.sort(function(a, b){return a - b});
+        document.getElementById('array_method_6').innerHTML = scores_sorted;
+        // date method 1
+        const d = new Date("2023-07-14");
+        document.getElementById('dateObject').innerHTML = d;
+        // date method 2
+        document.getElementById('date_method_2').innerHTML = d.getFullYear();
+        // date method 3
+        document.getElementById('date_method_3').innerHTML = d.getMonth()+1;
+        // date method 4
+        document.getElementById('date_method_4').innerHTML = d.getDate();
+        // date method 5
+        d.setHours(17);
+        document.getElementById('date_method_5').innerHTML = d;
+    </script>
+</body>
+</html>
